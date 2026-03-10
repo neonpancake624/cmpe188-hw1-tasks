@@ -1,0 +1,41 @@
+{
+  "tasks": [
+
+    {
+      "series": "Linear Regression",
+      "level": 5,
+      "id": "linreg_lvl5_diabetes_sklearn_dataset",
+      "algorithm": "Linear Regression (Real Dataset: Diabetes)",
+      "description": "Train linear regression on sklearn diabetes dataset with manual standardization.",
+      "interface_protocol": "pytorch_task_v1"
+    },
+
+    {
+      "series": "Linear Regression",
+      "level": 6,
+      "id": "linreg_lvl6_huber_outliers",
+      "algorithm": "Linear Regression (Robust: Huber Loss)",
+      "description": "Synthetic regression with outliers using SmoothL1Loss.",
+      "interface_protocol": "pytorch_task_v1"
+    },
+
+    {
+      "series": "Logistic Regression",
+      "level": 5,
+      "id": "logreg_lvl5_breast_cancer_lbfgs",
+      "algorithm": "Logistic Regression (Breast Cancer + LBFGS)",
+      "description": "Binary logistic regression using LBFGS optimizer.",
+      "interface_protocol": "pytorch_task_v1"
+    },
+
+    {
+      "series": "Logistic Regression",
+      "level": 6,
+      "id": "logreg_lvl6_text_bow_sentiment",
+      "algorithm": "Logistic Regression (Text Bag-of-Words)",
+      "description": "Sentiment classification using bag-of-words features.",
+      "interface_protocol": "pytorch_task_v1"
+    }
+
+  ]
+}
