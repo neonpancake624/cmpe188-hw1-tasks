@@ -97,7 +97,6 @@ def train(model, train_loader, val_loader, epochs: int = 300, lr: float = 1e-2, 
 
         loss_history.append(running / max(1, len(train_loader)))
 
-        # validation loss (MSE)
         model.eval()
         vrun = 0.0
         with torch.no_grad():
@@ -177,12 +176,11 @@ def main():
         "info": info,
         "train_metrics": train_metrics,
         "val_metrics": val_metrics,
-        "loss_history": [float(x) for x in loss_hist[-20:]],       # keep short
+        "loss_history": [float(x) for x in loss_hist[-20:]],
         "val_loss_history": [float(x) for x in val_loss_hist[-20:]]
     }
     save_artifacts(model, outputs, output_dir="output")
 
-    # Quality gate (diabetes is not super high R2; ~0.35+ is commonly reachable)
     passed = val_metrics["r2"] > 0.35 and math.isfinite(val_metrics["mse"])
     print("\nQuality check: val R2 > 0.35 =", val_metrics["r2"])
     print("PASS" if passed else "FAIL")
