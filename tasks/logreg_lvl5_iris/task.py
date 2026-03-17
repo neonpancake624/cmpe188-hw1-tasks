@@ -42,8 +42,6 @@ def make_dataloaders(batch_size: int = 16, seed: int = 42):
     data = load_iris()
     X = data.data.astype(np.float32)
 
-    # Iris has 3 classes (0,1,2). Make binary:
-    # label = 1 if class == 0 else 0
     y = (data.target == 0).astype(np.float32).reshape(-1, 1)
 
     X_train, X_val, y_train, y_val = train_test_split(
@@ -66,7 +64,6 @@ def make_dataloaders(batch_size: int = 16, seed: int = 42):
 def build_model(input_dim: int, device=None):
     if device is None:
         device = get_device()
-    # Logistic regression = linear layer; sigmoid applied during evaluation.
     return nn.Linear(input_dim, 1).to(device)
 
 
